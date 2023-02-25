@@ -31,11 +31,9 @@ public class Game {
 
         //make a character (with an overlaid image)
 
-        Shape studentShape = new BoxShape(1,2);
-        DynamicBody student = new DynamicBody(world, studentShape);
-        student.setPosition(new Vec2(7,-9));
-        student.addImage(new BodyImage("data/student.png", 4));
 
+        Student student = new Student(world);
+        student.setPosition(new Vec2(7,-9));
 
 
         //3. make a view to look into the game world
@@ -63,7 +61,7 @@ public class Game {
         frame.setVisible(true);
 
         //optional: uncomment this to make a debugging view
-         JFrame debugView = new DebugViewer(world, 500, 500);
+        // JFrame debugView = new DebugViewer(world, 500, 500);
 
         // start our game world simulation!
         world.start();
