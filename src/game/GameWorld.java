@@ -11,14 +11,16 @@ public class GameWorld extends World {
         //2. populate gameworld with bodies (ex: platforms, collectibles, characters)
 
         //make a ground platform
-        Shape shape = new BoxShape(30, 0.5f);
+        Shape shape = new BoxShape(30, 0.2f);
         StaticBody ground = new StaticBody(this, shape);
-        ground.setPosition(new Vec2(0f, -11.5f));
+        ground.setPosition(new Vec2(0f, -12.3f));
+
+
 
         // make a suspended platform
-        Shape platformShape = new BoxShape(3, 0.5f);
-        StaticBody platform1 = new StaticBody(this, platformShape);
-        platform1.setPosition(new Vec2(-8, -4f));
+        //Shape platformShape = new BoxShape(3, 0.5f);
+       // StaticBody platform1 = new StaticBody(this, platformShape);
+        //platform1.setPosition(new Vec2(-8, -4f));
 
         //make a character (with an overlaid image)
 
