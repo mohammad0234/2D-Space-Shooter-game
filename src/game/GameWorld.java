@@ -6,6 +6,8 @@ import city.cs.engine.StaticBody;
 import city.cs.engine.World;
 import org.jbox2d.common.Vec2;
 
+import java.awt.*;
+
 public class GameWorld extends World {
     public GameWorld(){
         //2. populate gameworld with bodies (ex: platforms, collectibles, characters)
@@ -14,6 +16,7 @@ public class GameWorld extends World {
         Shape shape = new BoxShape(30, 0.2f);
         StaticBody ground = new StaticBody(this, shape);
         ground.setPosition(new Vec2(0f, -14.9f));
+        ground.setFillColor(Color.BLACK);
 
 
 
