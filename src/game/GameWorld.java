@@ -13,7 +13,7 @@ public class GameWorld extends World {
         //make a ground platform
         Shape shape = new BoxShape(30, 0.2f);
         StaticBody ground = new StaticBody(this, shape);
-        ground.setPosition(new Vec2(0f, -12.3f));
+        ground.setPosition(new Vec2(0f, -14.9f));
 
 
 
@@ -24,7 +24,7 @@ public class GameWorld extends World {
 
         //make a character (with an overlaid image)
 
-        Student student = new Student(this);
-        student.setPosition(new Vec2(7,-9));
+        SpaceShooter shooter = new SpaceShooter(this);
+        shooter.setPosition(new Vec2(9,-12));
     }
 }
