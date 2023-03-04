@@ -9,6 +9,8 @@ import org.jbox2d.common.Vec2;
 import java.awt.*;
 
 public class GameWorld extends World {
+    SpaceShooter mainShooter;
+
     public GameWorld() {
         //2. populate gameworld with bodies (ex: platforms, collectibles, characters)
 
@@ -18,7 +20,6 @@ public class GameWorld extends World {
         ground.setPosition(new Vec2(0f, -14.9f));
         ground.setFillColor(Color.BLACK);
 
-
         // make a suspended platform
         //Shape platformShape = new BoxShape(3, 0.5f);
         // StaticBody platform1 = new StaticBody(this, platformShape);
@@ -26,10 +27,8 @@ public class GameWorld extends World {
 
         //make a character (with an overlaid image)
 
-        SpaceShooter shooter = new SpaceShooter(this);
-        shooter.setPosition(new Vec2(0, -12));
-
-
+        mainShooter = new SpaceShooter(this);
+        mainShooter.setPosition(new Vec2(0, -12));
 
         Enemy enemy1 = new Enemy(this);
         enemy1.setPosition(new Vec2(-2, 10));
@@ -39,4 +38,9 @@ public class GameWorld extends World {
         enemy2.setPosition(new Vec2(-1, 10));
         enemy2.setGravityScale(0);
     }
+
+    public SpaceShooter getShooter(){
+        return mainShooter;
+    }
+
 }

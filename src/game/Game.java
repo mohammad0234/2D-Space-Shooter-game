@@ -19,10 +19,14 @@ public class Game {
 
         GameWorld world = new GameWorld();
 
-
         //3. make a view to look into the game world
         //UserView view = new UserView(world, 500, 500);
         GameView view = new GameView(world, 800, 600);
+
+        PlayerController sc = new PlayerController(world.getShooter());
+        view.addKeyListener(sc);
+
+        view.addMouseListener(new GiveFocus(view));
 
         //optional: draw a 1-metre grid over the view
         // view.setGridResolution(1);
@@ -50,6 +54,7 @@ public class Game {
 
         // start our game world simulation!
         world.start();
+
     }
 
     /** Run the game. */
