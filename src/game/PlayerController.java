@@ -18,7 +18,6 @@ public class PlayerController implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("Key pressed "+ e.getKeyChar());
 
         int code = e.getKeyCode();
         // other key commands omitted
@@ -29,16 +28,19 @@ public class PlayerController implements KeyListener {
         else if ((code == KeyEvent.VK_RIGHT) || (code == KeyEvent.VK_D)) {
             mainShooter.startWalking(10);
         }
-        
+
+
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         int code = e.getKeyCode();
         // other key commands omitted
-        if (code == KeyEvent.VK_LEFT) {
+        if ((code == KeyEvent.VK_LEFT ) || (code == KeyEvent.VK_A)) {
             mainShooter.stopWalking();
-        } else if (code == KeyEvent.VK_RIGHT) {
+        }
+
+        else if ((code == KeyEvent.VK_RIGHT) || (code == KeyEvent.VK_D)) {
             mainShooter.stopWalking();
         }
     }

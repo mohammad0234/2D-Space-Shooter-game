@@ -6,6 +6,7 @@ import city.cs.engine.StaticBody;
 import city.cs.engine.World;
 import org.jbox2d.common.Vec2;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class GameWorld extends World {
@@ -14,11 +15,27 @@ public class GameWorld extends World {
     public GameWorld() {
         //2. populate gameworld with bodies (ex: platforms, collectibles, characters)
 
+        Color transparentBlack = new Color(0, 0, 0, 0);
+
         //make a ground platform
         Shape shape = new BoxShape(30, 0.2f);
         StaticBody ground = new StaticBody(this, shape);
-        ground.setPosition(new Vec2(0f, -14.9f));
-        ground.setFillColor(Color.BLACK);
+        ground.setPosition(new Vec2(0f, -15f));
+        ground.setFillColor(transparentBlack);
+        ground.setLineColor(transparentBlack);
+
+        Shape shape2 = new BoxShape(0.1f, 20f);
+        StaticBody leftSide = new StaticBody(this, shape2);
+        leftSide.setPosition(new Vec2(-19.7f, 2f));
+        leftSide.setFillColor(transparentBlack);
+        leftSide.setLineColor(transparentBlack);
+
+        Shape shape3 = new BoxShape(0.1f, 20f);
+        StaticBody rightSide = new StaticBody(this, shape3);
+        rightSide.setPosition(new Vec2(19.7f, 2f));
+        rightSide.setFillColor(transparentBlack);
+        rightSide.setLineColor(transparentBlack);
+
 
         // make a suspended platform
         //Shape platformShape = new BoxShape(3, 0.5f);
