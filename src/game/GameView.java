@@ -8,9 +8,15 @@ import java.awt.*;
 
 public class GameView extends UserView  {
 
-    private static Image background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
-    public GameView(GameWorld w, int width, int height) {
+    private Image background;
+    private SpaceShooter mainShooter;
+
+   // private static Image background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+    public GameView(World w, SpaceShooter shooter, int width, int height) {
         super(w, width, height);
+        background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+
+        mainShooter = shooter;
     }
 
     @Override
@@ -18,5 +24,9 @@ public class GameView extends UserView  {
         super.paintBackground(g);
         g.drawImage(background, 0, 0, this);
 
+    }
+
+    protected void paintForeground(Graphics2D g){
+        g.drawString("Total score: " + mainShooter.getTotalScore(), 20, 60);
     }
 }

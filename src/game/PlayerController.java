@@ -1,5 +1,7 @@
 package game;
 
+import city.cs.engine.SoundClip;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -29,6 +31,9 @@ public class PlayerController implements KeyListener {
             mainShooter.startWalking(10);
         }
 
+        else if (code == KeyEvent.VK_SPACE) {
+            mainShooter.shoot();
+        }
 
     }
 
