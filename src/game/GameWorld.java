@@ -58,6 +58,10 @@ public class GameWorld extends World {
         Asteroids asteroid1 = new Asteroids(this);
         asteroid1.setPosition(new Vec2(-2,10));
         asteroid1.setGravityScale(0);
+
+        Asteroids asteroid2 = new Asteroids(this);
+        asteroid2.setPosition(new Vec2(-4,10));
+        asteroid2.setGravityScale(0);
     }
 
     public SpaceShooter getShooter(){
