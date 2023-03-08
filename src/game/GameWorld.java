@@ -20,7 +20,7 @@ public class GameWorld extends World {
         //make a ground platform
         Shape shape = new BoxShape(30, 0.2f);
         StaticBody ground = new StaticBody(this, shape);
-        ground.setPosition(new Vec2(0f, -15f));
+        ground.setPosition(new Vec2(0f, -14f));
         ground.setFillColor(transparentBlack);
         ground.setLineColor(transparentBlack);
 
@@ -36,31 +36,25 @@ public class GameWorld extends World {
         rightSide.setFillColor(transparentBlack);
         rightSide.setLineColor(transparentBlack);
 
-
-        // make a suspended platform
-        //Shape platformShape = new BoxShape(3, 0.5f);
-        // StaticBody platform1 = new StaticBody(this, platformShape);
-        //platform1.setPosition(new Vec2(-8, -4f));
-
         //make a character (with an overlaid image)
 
         mainShooter = new SpaceShooter(this);
         mainShooter.setPosition(new Vec2(0, -12));
 
         Enemy enemy1 = new Enemy(this);
-        enemy1.setPosition(new Vec2(-2, 10));
+        enemy1.setPosition(new Vec2(0, 9));
         enemy1.setGravityScale(0);
 
         Enemy enemy2 = new Enemy(this);
-        enemy2.setPosition(new Vec2(-1, 10));
+        enemy2.setPosition(new Vec2(3, 4.5f));
         enemy2.setGravityScale(0);
 
         Asteroids asteroid1 = new Asteroids(this);
-        asteroid1.setPosition(new Vec2(-2,10));
+        asteroid1.setPosition(new Vec2(4,7));
         asteroid1.setGravityScale(0);
 
         Asteroids asteroid2 = new Asteroids(this);
-        asteroid2.setPosition(new Vec2(-4,10));
+        asteroid2.setPosition(new Vec2(-4,11));
         asteroid2.setGravityScale(0);
     }
 

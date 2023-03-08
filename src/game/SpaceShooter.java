@@ -5,7 +5,7 @@ import city.cs.engine.*;
 import org.jbox2d.common.Vec2;
 
 public class SpaceShooter extends Walker {
-    private static final Shape spaceShape = new BoxShape(1,2);
+    private static final Shape spaceShape = new PolygonShape(1.36f,-0.79f, 1.36f,-0.6f, 0.32f,1.48f, -0.28f,1.48f, -1.36f,-0.56f, -1.36f,-0.79f);
 
     private static final BodyImage image = new BodyImage("data/Player/ship.png", 3);
 
@@ -15,6 +15,9 @@ public class SpaceShooter extends Walker {
 
     public SpaceShooter(World world){
         super(world,spaceShape);
+
+        SolidFixture t = new SolidFixture(this,spaceShape);
+        t.setFriction(20);
         this.addImage(image);
 
         totalScore = 0;
