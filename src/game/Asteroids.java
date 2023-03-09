@@ -23,8 +23,8 @@ public class Asteroids extends Walker implements StepListener {
 
     public void setPosition(Vec2 position){
         super.setPosition((position));
-        left = position.x-15;
-        right = position.x+15;
+        left = position.x-12;
+        right = position.x+12;
     }
 
     @Override
