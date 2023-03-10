@@ -6,11 +6,10 @@ import city.cs.engine.StaticBody;
 import city.cs.engine.World;
 import org.jbox2d.common.Vec2;
 
-import javax.swing.*;
 import java.awt.*;
 
-public class GameWorld extends World {
-    SpaceShooter mainShooter;
+public class GameWorld extends World  {
+    static SpaceShooter mainShooter;
     int numWidthEnemy = 11;
     int numHeightEnemy = 5;
     int enemySpacing = 40;
@@ -43,6 +42,8 @@ public class GameWorld extends World {
 
         mainShooter = new SpaceShooter(this);
         mainShooter.setPosition(new Vec2(0, -12));
+
+        Star star = new Star(this);
 
         Enemy enemy1 = new Enemy(this);
         enemy1.setPosition(new Vec2(-2.5f, 4.5f));
@@ -104,9 +105,15 @@ public class GameWorld extends World {
         asteroid6.setPosition(new Vec2(0,10.5f));
         asteroid6.setGravityScale(0);
         asteroid6.setValue();
+
+        Pickup g = new Pickup(mainShooter,this);
+        //star.addCollisionListener(g);
+        mainShooter.addCollisionListener(g);
+
+
     }
 
-    public SpaceShooter getShooter(){
+    public static SpaceShooter getShooter(){
         return mainShooter;
     }
 
