@@ -23,7 +23,7 @@ public class EnemyCollision implements CollisionListener, ActionListener{
         if (collisionEvent.getOtherBody() instanceof Enemy || collisionEvent.getOtherBody() instanceof Asteroids)  {
             otherBody = collisionEvent.getOtherBody();
             mainShooter.setTotalScore(mainShooter.getTotalScore()+5);
-            final BodyImage explosionGif = new BodyImage("data/ezgif3.gif", 3);
+            final BodyImage explosionGif = new BodyImage("data/ezgif.gif", 3);
             collisionEvent.getOtherBody().addImage(explosionGif);
 
             Timer timer = new Timer(500, this );
