@@ -7,7 +7,7 @@ public class Enemy extends Walker implements StepListener {
 
     private float left,right;
 
-    private float deltaY = -0.005f;
+    private float deltaY = -0.005f;  // how slow it moves down
 
     Vec2 startPosition;
 
@@ -44,7 +44,7 @@ public class Enemy extends Walker implements StepListener {
            // deltaX*=-2;
         }
 
-        this.setPosition(new Vec2(this.getPosition().x, this.getPosition().y+ deltaY));
+        this.setPosition(new Vec2(this.getPosition().x, this.getPosition().y+ deltaY));  //enemies move down towards player
 
     }
 

@@ -10,9 +10,6 @@ import java.awt.*;
 
 public class GameWorld extends World  {
     static SpaceShooter mainShooter;
-    int numWidthEnemy = 11;
-    int numHeightEnemy = 5;
-    int enemySpacing = 40;
 
     public GameWorld() {
         //2. populate gameworld with bodies (ex: platforms, collectibles, characters)
@@ -106,9 +103,11 @@ public class GameWorld extends World  {
         asteroid6.setGravityScale(0);
         asteroid6.setValue();
 
-        Pickup g = new Pickup(mainShooter,this);
-        //star.addCollisionListener(g);
-        mainShooter.addCollisionListener(g);
+        Pickup pick = new Pickup(mainShooter,this);
+        mainShooter.addCollisionListener(pick);  // calls on the pickup method to repsawn in again and so the collision works when it respawns
+
+       // EnemyCollision enemySpawn = new EnemyCollision(mainShooter,this);
+      //  mainShooter.addCollisionListener(enemySpawn);
 
 
     }

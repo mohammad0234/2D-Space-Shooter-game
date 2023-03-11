@@ -28,6 +28,6 @@ public class GameView extends UserView  {
     @Override
     protected void paintForeground(Graphics2D g){
         g.setColor(Color.white);
-        g.drawString("Total score: " + mainShooter.getTotalScore(), 10, 30);
+        g.drawString("Total score: " + mainShooter.getTotalScore(), 10, 30);  // calls on my total score and sets position
     }
 }

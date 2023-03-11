@@ -7,7 +7,7 @@ import city.cs.engine.World;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Time;
+
 
 public class Pickup implements CollisionListener, ActionListener {
 
@@ -23,7 +23,7 @@ public class Pickup implements CollisionListener, ActionListener {
     public void collide(CollisionEvent e) {
         if (e.getOtherBody() instanceof Star){
             e.getOtherBody().destroy();
-            mainShooter.multiplyPoints();
+            mainShooter.multiplyPoints();  // if star is picked up, points are multiplied
 
             Timer timer = new Timer(20000,this);
             timer.setRepeats(true);
@@ -33,6 +33,6 @@ public class Pickup implements CollisionListener, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        new Star(world);
+        new Star(world);    //new star is spawned in after a set amount of time.
     }
 }

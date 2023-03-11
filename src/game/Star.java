@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Star extends Walker {
 
-    Random star;
+    Random star;  // Random variable
     float xPos;
 
     static int starCount;
@@ -21,7 +21,7 @@ public class Star extends Walker {
         super(world,starShape);
         addImage(image);
         xPos= ThreadLocalRandom.current().nextInt(-20, 20);
-        setPosition(new Vec2(xPos, -12));
+        setPosition(new Vec2(xPos, -12));  //randomised drop of stars on the x coordinate
     }
 
 }

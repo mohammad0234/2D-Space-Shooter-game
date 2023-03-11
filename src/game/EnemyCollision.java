@@ -6,15 +6,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
-import java.security.PrivateKey;
 
 public class EnemyCollision implements CollisionListener, ActionListener{
 
     private SpaceShooter mainShooter;
+   // World world;
     private Body otherBody;
 
-    public EnemyCollision(SpaceShooter s){
+    public EnemyCollision(SpaceShooter s/*,World w*/){
         mainShooter = s;
+       // this.world = w;
     }
 
     @Override
@@ -24,18 +25,21 @@ public class EnemyCollision implements CollisionListener, ActionListener{
             otherBody = collisionEvent.getOtherBody();
             mainShooter.addPoints();
             final BodyImage explosionGif = new BodyImage("data/ezgif.gif", 3);
-            collisionEvent.getOtherBody().addImage(explosionGif);
+            collisionEvent.getOtherBody().addImage(explosionGif);  //adds animation when body is destroyed
 
             Timer timer = new Timer(500, this );
             timer.setRepeats(false);
             timer.start();
+
+            /*Timer enemyTimer = new Timer(15000, this);
+            enemyTimer.setRepeats(false);
+            enemyTimer.start();*/
         }
 
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {  //Bullet destroys enemy with animation
         otherBody.destroy();
-
     }
 }
