@@ -20,7 +20,7 @@ public class Star extends Walker {
     public Star(World world) {
         super(world,starShape);
         addImage(image);
-        xPos= ThreadLocalRandom.current().nextInt(-20, 20);
+        xPos= ThreadLocalRandom.current().nextInt(-15, 15);
         setPosition(new Vec2(xPos, -12));  //randomised drop of stars on the x coordinate
     }
 

@@ -106,10 +106,6 @@ public class GameWorld extends World  {
         Pickup pick = new Pickup(mainShooter,this);
         mainShooter.addCollisionListener(pick);  // calls on the pickup method to repsawn in again and so the collision works when it respawns
 
-       // EnemyCollision enemySpawn = new EnemyCollision(mainShooter,this);
-      //  mainShooter.addCollisionListener(enemySpawn);
-
-
     }
 
     public static SpaceShooter getShooter(){

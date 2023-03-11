@@ -22,12 +22,10 @@ public class Enemy extends Walker implements StepListener {
         addImage(image);
         world.addStepListener(this);
         startWalking(5);
-        //setAlwaysOutline(true);
     }
 
     public void setValue(){
         startPosition = this.getPosition();
-        //super.setPosition((position));
         left = startPosition.x-12f;
         right = startPosition.x+12f;
     }
@@ -35,13 +33,11 @@ public class Enemy extends Walker implements StepListener {
     @Override
     public void preStep(StepEvent stepEvent) {
         if (getPosition().x>right){
-            startWalking(-5);
-            //deltaX*=-2;
+            startWalking(-7);
         }
 
         if (getPosition().x<left){
-            startWalking(5);
-           // deltaX*=-2;
+            startWalking(7);
         }
 
         this.setPosition(new Vec2(this.getPosition().x, this.getPosition().y+ deltaY));  //enemies move down towards player

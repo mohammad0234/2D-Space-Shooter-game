@@ -24,11 +24,11 @@ public class PlayerController implements KeyListener {
         int code = e.getKeyCode();
         // other key commands omitted
         if ((code == KeyEvent.VK_LEFT ) || (code == KeyEvent.VK_A)) {
-            mainShooter.startWalking(-10);
+            mainShooter.startWalking(-11);
         }
 
         else if ((code == KeyEvent.VK_RIGHT) || (code == KeyEvent.VK_D)) {
-            mainShooter.startWalking(10);
+            mainShooter.startWalking(11);
         }
 
         else if (code == KeyEvent.VK_SPACE) {
@@ -40,7 +40,6 @@ public class PlayerController implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         int code = e.getKeyCode();
-        // other key commands omitted
         if ((code == KeyEvent.VK_LEFT ) || (code == KeyEvent.VK_A)) {
             mainShooter.stopWalking();
         }

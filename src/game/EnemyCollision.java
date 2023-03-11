@@ -10,12 +10,11 @@ import javax.swing.Timer;
 public class EnemyCollision implements CollisionListener, ActionListener{
 
     private SpaceShooter mainShooter;
-   // World world;
     private Body otherBody;
 
-    public EnemyCollision(SpaceShooter s/*,World w*/){
-        mainShooter = s;
-       // this.world = w;
+
+    public EnemyCollision(SpaceShooter shoot){
+        mainShooter = shoot;
     }
 
     @Override
@@ -31,9 +30,9 @@ public class EnemyCollision implements CollisionListener, ActionListener{
             timer.setRepeats(false);
             timer.start();
 
-            /*Timer enemyTimer = new Timer(15000, this);
+            Timer enemyTimer = new Timer(15000, this);
             enemyTimer.setRepeats(false);
-            enemyTimer.start();*/
+            enemyTimer.start();
         }
 
     }

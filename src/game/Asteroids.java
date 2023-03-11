@@ -33,13 +33,11 @@ public class Asteroids extends Walker implements StepListener {
     @Override
     public void preStep(StepEvent stepEvent) {  // moves asteroids right to left
         if (getPosition().x>right){
-            startWalking(-5);
-            //deltaX*=-1;
+            startWalking(-7);
         }
 
         if (getPosition().x<left){
-            startWalking(5);
-            //deltaX*=-1;
+            startWalking(7);
         }
 
        this.setPosition(new Vec2(this.getPosition().x, this.getPosition().y+ deltaY));  // moves asteroids down
