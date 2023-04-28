@@ -12,7 +12,10 @@ public class SpaceShooter extends Walker  {
             -1.36f,-0.56f, -1.36f,-0.79f);
 
     private static final BodyImage image = new BodyImage("data/Player/ship.png", 3);
+    public int getStarCount;
     int totalScore, points ;
+
+//    Game game;
 
     public SpaceShooter(World world){
         super(world,spaceShape);
@@ -21,6 +24,7 @@ public class SpaceShooter extends Walker  {
         this.addImage(image);
         points = 5;
         totalScore = 0;
+//        game=game;
     }
 
     public void shoot(){
@@ -34,6 +38,7 @@ public class SpaceShooter extends Walker  {
 
         projectile.setPosition(new Vec2(this.getPosition().x,this.getPosition().y+2));
         projectile.setLinearVelocity(new Vec2(0,40));
+
 
     }
 

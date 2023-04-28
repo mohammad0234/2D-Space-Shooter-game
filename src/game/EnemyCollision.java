@@ -9,18 +9,27 @@ import javax.swing.Timer;
 
 public class EnemyCollision implements CollisionListener, ActionListener{
 
+//    GameLevel level;
+//    Game g;
+
+//    public EnemyCollision (GameLevel level){
+//        this.level=level;
+//    }
+
     private SpaceShooter mainShooter;
     private Body otherBody;
 
-
     public EnemyCollision(SpaceShooter shoot){
         mainShooter = shoot;
+//        this.level=level;
+//        g = game;
     }
 
     @Override
     public void collide(CollisionEvent collisionEvent) {
-        collisionEvent.getReportingBody().destroy();
+
         if (collisionEvent.getOtherBody() instanceof Enemy || collisionEvent.getOtherBody() instanceof Asteroids)  {
+            collisionEvent.getReportingBody().destroy();
             otherBody = collisionEvent.getOtherBody();
             mainShooter.addPoints();
             final BodyImage explosionGif = new BodyImage("data/ezgif.gif", 3);
@@ -30,15 +39,16 @@ public class EnemyCollision implements CollisionListener, ActionListener{
             timer.setRepeats(false);
             timer.start();
 
-            Timer enemyTimer = new Timer(15000, this);
-            enemyTimer.setRepeats(false);
-            enemyTimer.start();
+//            if (level.isComplete){
+//                g.goToNextLevel();
+//            }
+
         }
 
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {  //Bullet destroys enemy with animation
+    public void actionPerformed(ActionEvent e) {   //Bullet destroys enemy with animation
         otherBody.destroy();
     }
 }

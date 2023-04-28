@@ -1,23 +1,34 @@
 package game;
 
-import city.cs.engine.*;
-import org.jbox2d.common.Vec2;
+
+import city.cs.engine.SoundClip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 import javax.swing.JFrame;
+import java.io.IOException;
 
 /**
  * Your main game entry point
  */
 public class Game {
 
-
     /** Initialise a new Game. */
     public Game() {
+
 
         //1. make an empty game world
        // World world = new World();
 
-        GameWorld world = new GameWorld();
+        Level1 world = new Level1();
+
+//        try {
+//            gameMusic = new SoundClip("data/Sound/music/level1.wav");
+//            gameMusic.loop();
+//
+//        }catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
+//            System.out.println(e);
+//        }
 
         //3. make a view to look into the game world
         GameView view = new GameView(world, world.getShooter(), 800, 600);
@@ -51,6 +62,22 @@ public class Game {
         world.start();
 
     }
+
+//      public void goToNextLevel(){
+//          System.out.println("Next level");
+////        if (level instanceof Level1){
+////            level.stop();
+////            level = new Level2(this);
+////            //level now refer to the new level
+////            view.setWorld(level);
+////            controller.updateStudent(level.getStudent());
+////            level.start();
+////        }
+////        else if (level instanceof Level2){
+////            System.out.println("Well done! Game complete.");
+////            System.exit(0);
+////        }
+//    }
 
     /** Run the game. */
     public static void main(String[] args) {

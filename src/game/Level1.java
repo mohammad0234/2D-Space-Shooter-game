@@ -1,46 +1,17 @@
 package game;
 
-import city.cs.engine.BoxShape;
-import city.cs.engine.Shape;
-import city.cs.engine.StaticBody;
-import city.cs.engine.World;
+import city.cs.engine.SoundClip;
 import org.jbox2d.common.Vec2;
 
-import java.awt.*;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 
-public class GameWorld extends World  {
-    static SpaceShooter mainShooter;
+public class Level1 extends GameLevel{
+    private static SoundClip gameMusic;
 
-    public GameWorld() {
-        //2. populate gameworld with bodies (ex: platforms, collectibles, characters)
-
-        Color transparentBlack = new Color(0, 0, 0, 0);
-
-        //make a ground platform
-        Shape shape = new BoxShape(30, 0.2f);
-        StaticBody ground = new StaticBody(this, shape);
-        ground.setPosition(new Vec2(0f, -14f));
-        ground.setFillColor(transparentBlack);
-        ground.setLineColor(transparentBlack);
-
-        Shape shape2 = new BoxShape(0.1f, 20f);
-        StaticBody leftSide = new StaticBody(this, shape2);
-        leftSide.setPosition(new Vec2(-19.7f, 2f));
-        leftSide.setFillColor(transparentBlack);
-        leftSide.setLineColor(transparentBlack);
-
-        Shape shape3 = new BoxShape(0.1f, 20f);
-        StaticBody rightSide = new StaticBody(this, shape3);
-        rightSide.setPosition(new Vec2(19.7f, 2f));
-        rightSide.setFillColor(transparentBlack);
-        rightSide.setLineColor(transparentBlack);
-
-        //make a character (with an overlaid image)
-
-        mainShooter = new SpaceShooter(this);
-        mainShooter.setPosition(new Vec2(0, -12));
-
-        Star star = new Star(this);
+    public Level1(){
+        super();
 
         Enemy enemy1 = new Enemy(this);
         enemy1.setPosition(new Vec2(-2.5f, 4.5f));
@@ -103,13 +74,17 @@ public class GameWorld extends World  {
         asteroid6.setGravityScale(0);
         asteroid6.setValue();
 
-        Pickup pick = new Pickup(mainShooter,this);
-        mainShooter.addCollisionListener(pick);  // calls on the pickup method to repsawn in again and so the collision works when it respawns
+        try {
+            gameMusic = new SoundClip("data/Sound/music/level1.wav");
+            gameMusic.loop();
 
+        }catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
+            System.out.println(e);
+        }
     }
 
-    public static SpaceShooter getShooter(){
-        return mainShooter;
+    @Override
+    public boolean isComplete() {
+        return getShooter().getStarCount>2;
     }
-
 }

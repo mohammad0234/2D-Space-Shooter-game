@@ -23,7 +23,7 @@ public class PlayerController implements KeyListener {
 
         int code = e.getKeyCode();
         // other key commands omitted
-        if ((code == KeyEvent.VK_LEFT ) || (code == KeyEvent.VK_A)) {
+        if ((code == KeyEvent.VK_LEFT ) || (code == KeyEvent.VK_A )) {
             mainShooter.startWalking(-11);
         }
 

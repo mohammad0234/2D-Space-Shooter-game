@@ -11,6 +11,10 @@ import java.awt.event.ActionListener;
 
 public class Pickup implements CollisionListener, ActionListener {
 
+    GameLevel level;
+
+     static int starPicked;
+
     private SpaceShooter mainShooter;
     World world;
 
@@ -24,10 +28,12 @@ public class Pickup implements CollisionListener, ActionListener {
         if (e.getOtherBody() instanceof Star){
             e.getOtherBody().destroy();
             mainShooter.multiplyPoints();  // if star is picked up, points are multiplied
+            starPicked++;
 
             Timer timer = new Timer(20000,this);
             timer.setRepeats(true);
             timer.start();
+            timer.isRunning();
         }
     }
 
