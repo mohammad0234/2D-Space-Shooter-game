@@ -22,14 +22,6 @@ public class Game {
 
         Level1 world = new Level1();
 
-//        try {
-//            gameMusic = new SoundClip("data/Sound/music/level1.wav");
-//            gameMusic.loop();
-//
-//        }catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
-//            System.out.println(e);
-//        }
-
         //3. make a view to look into the game world
         GameView view = new GameView(world, world.getShooter(), 800, 600);
         view.setZoom(20);
