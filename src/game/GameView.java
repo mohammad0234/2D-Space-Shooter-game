@@ -37,10 +37,7 @@ public class GameView extends UserView  {
     public void setWorld(GameLevel gl){
         super.setWorld(gl);
         this.currentLevel = gl;
-
-        if (currentLevel instanceof Level1){
-            background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
-        }
+        this.mainShooter = currentLevel.getShooter();
 
         if (currentLevel instanceof Level2){
             background = new ImageIcon("data/bg2.jpg").getImage();

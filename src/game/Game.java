@@ -68,16 +68,23 @@ public class Game {
             currentLevel = new Level2(this);
             SpaceShooter newShooter = currentLevel.getShooter();
 
+            //level now refer to the new level
+            view.setWorld(currentLevel);
+            controller.updateShooter(currentLevel.getShooter());
+            currentLevel.start();
+        }
+        else if (currentLevel instanceof Level2){
+            ((Level2) currentLevel).gameMusic.stop();
+            SpaceShooter prevShooter = currentLevel.getShooter();
+
+            currentLevel = new Level3(this);
+            SpaceShooter newShooter = currentLevel.getShooter();
 
             //level now refer to the new level
             view.setWorld(currentLevel);
             controller.updateShooter(currentLevel.getShooter());
             currentLevel.start();
         }
-//        else if (currentLevel instanceof Level2){
-//            System.out.println("Well done! Game complete.");
-//            System.exit(0);
-//        }
     }
 
     /** Run the game. */

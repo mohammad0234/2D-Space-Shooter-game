@@ -11,8 +11,6 @@ import java.awt.event.ActionListener;
 
 public class Pickup implements CollisionListener, ActionListener {
 
-
-
     private SpaceShooter mainShooter;
     World world;
 
@@ -28,7 +26,7 @@ public class Pickup implements CollisionListener, ActionListener {
             mainShooter.multiplyPoints();  // if star is picked up, points are multiplied
             mainShooter.setStarCount(mainShooter.getStarCount()+1);
 
-            Timer timer = new Timer(5000,this);
+            Timer timer = new Timer(2000,this);
             timer.setRepeats(true);
             timer.start();
             timer.isRunning();
