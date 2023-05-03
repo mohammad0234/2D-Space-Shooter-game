@@ -11,10 +11,8 @@ import java.awt.*;
 public abstract class GameLevel extends World {
 
     private SpaceShooter mainShooter;
-    // public boolean isComplete;
 
     private Game game;
-    public Game cureentLevel;
 
     public GameLevel(Game game){
 
@@ -50,10 +48,6 @@ public abstract class GameLevel extends World {
         mainShooter.addCollisionListener(pick);  // calls on the pickup method to repsawn in again and so the collision works when it respawns
 
         mainShooter.addCollisionListener(new StarEncounter(this,game));
-    }
-
-    public Game getCureentLevel() {
-        return cureentLevel;
     }
 
     public SpaceShooter getShooter(){

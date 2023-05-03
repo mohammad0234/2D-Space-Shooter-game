@@ -1,7 +1,6 @@
 package game;
 
 import city.cs.engine.UserView;
-import city.cs.engine.World;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,13 +9,12 @@ public class GameView extends UserView  {
 
     private Image background;
     private SpaceShooter mainShooter;
-
     private GameLevel currentLevel;
 
 
     public GameView(GameLevel w, SpaceShooter shooter, int width, int height) {
         super(w, width, height);
-        background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+        background = new ImageIcon("data/Background/bg1.png").getImage();
 
         mainShooter = shooter;
     }
@@ -39,8 +37,15 @@ public class GameView extends UserView  {
         this.currentLevel = gl;
         this.mainShooter = currentLevel.getShooter();
 
-        if (currentLevel instanceof Level2){
-            background = new ImageIcon("data/bg2.jpg").getImage();
+        if (currentLevel instanceof Level1){
+            background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+        }
+        else if
+        (currentLevel instanceof Level2){
+            background = new ImageIcon("data/Background/bg2.jpg").getImage();
+        }
+        else if(currentLevel instanceof Level3){
+            background = new ImageIcon("data/Background/bg3.png").getImage();
         }
     }
 }

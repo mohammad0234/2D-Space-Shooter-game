@@ -1,12 +1,6 @@
 package game;
 
-
-import city.cs.engine.SoundClip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-
 import javax.swing.JFrame;
-import java.io.IOException;
 
 /**
  * Your main game entry point
@@ -19,7 +13,6 @@ public class Game {
 
     /** Initialise a new Game. */
     public Game() {
-
 
         //1. make an empty game world
        // World world = new World();
@@ -73,8 +66,9 @@ public class Game {
             controller.updateShooter(currentLevel.getShooter());
             currentLevel.start();
         }
-        else if (currentLevel instanceof Level2){
+        if (currentLevel instanceof Level2){
             ((Level2) currentLevel).gameMusic.stop();
+
             SpaceShooter prevShooter = currentLevel.getShooter();
 
             currentLevel = new Level3(this);

@@ -8,7 +8,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class Level3 extends GameLevel{
-    private static SoundClip gameMusic;
+    public SoundClip gameMusic;
 
     public Level3(Game game){
         super(game);
