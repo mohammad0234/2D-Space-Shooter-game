@@ -12,7 +12,7 @@ public class GameView extends UserView  {
     private SpaceShooter mainShooter;
 
    // private static Image background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
-    public GameView(Level1 w, SpaceShooter shooter, int width, int height) {
+    public GameView(GameLevel w, SpaceShooter shooter, int width, int height) {
         super(w, width, height);
         background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
 
@@ -29,6 +29,6 @@ public class GameView extends UserView  {
     protected void paintForeground(Graphics2D g){
         g.setColor(Color.white);
         g.drawString("Total score: " + mainShooter.getTotalScore(), 10, 30);  // calls on my total score and sets position
-        g.drawString("Star picked: " + Pickup.starPicked, 10,50);
+        g.drawString("Star picked: " + mainShooter.getStarCount(), 10,50);
     }
 }

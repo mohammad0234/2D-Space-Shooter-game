@@ -9,20 +9,11 @@ import javax.swing.Timer;
 
 public class EnemyCollision implements CollisionListener, ActionListener{
 
-//    GameLevel level;
-//    Game g;
-
-//    public EnemyCollision (GameLevel level){
-//        this.level=level;
-//    }
-
     private SpaceShooter mainShooter;
     private Body otherBody;
 
     public EnemyCollision(SpaceShooter shoot){
         mainShooter = shoot;
-//        this.level=level;
-//        g = game;
     }
 
     @Override

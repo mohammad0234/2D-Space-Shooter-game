@@ -48,4 +48,8 @@ public class PlayerController implements KeyListener {
             mainShooter.stopWalking();
         }
     }
+
+    public void updateShooter (SpaceShooter newShooter){
+        mainShooter = newShooter;
+    }
 }

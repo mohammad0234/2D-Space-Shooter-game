@@ -12,6 +12,10 @@ import java.io.IOException;
  * Your main game entry point
  */
 public class Game {
+    GameLevel currentLevel;
+
+    GameView view;
+    PlayerController controller;
 
     /** Initialise a new Game. */
     public Game() {
@@ -20,14 +24,14 @@ public class Game {
         //1. make an empty game world
        // World world = new World();
 
-        Level1 world = new Level1();
+        currentLevel = new Level1(this);
 
         //3. make a view to look into the game world
-        GameView view = new GameView(world, world.getShooter(), 800, 600);
+        view = new GameView(currentLevel, currentLevel.getShooter(), 800, 600);
         view.setZoom(20);
 
-        PlayerController sc = new PlayerController(world.getShooter());
-        view.addKeyListener(sc);
+        controller = new PlayerController(currentLevel.getShooter());
+        view.addKeyListener(controller);
 
         view.addMouseListener(new GiveFocus(view));
 
@@ -51,29 +55,32 @@ public class Game {
         //JFrame debugView = new DebugViewer(world, 500, 500);
 
         // start our game world simulation!
-        world.start();
+        currentLevel.start();
 
     }
 
-//      public void goToNextLevel(){
-//          System.out.println("Next level");
-////        if (level instanceof Level1){
-////            level.stop();
-////            level = new Level2(this);
-////            //level now refer to the new level
-////            view.setWorld(level);
-////            controller.updateStudent(level.getStudent());
-////            level.start();
-////        }
-////        else if (level instanceof Level2){
-////            System.out.println("Well done! Game complete.");
-////            System.exit(0);
-////        }
-//    }
+      public void goToNextLevel(){
+        if (currentLevel instanceof Level1){
+            currentLevel.stop();
+            SpaceShooter prevShooter = currentLevel.getShooter();
+
+            currentLevel = new Level2(this);
+            SpaceShooter newShooter = currentLevel.getShooter();
+
+
+            //level now refer to the new level
+            view.setWorld(currentLevel);
+            controller.updateShooter(currentLevel.getShooter());
+            currentLevel.start();
+        }
+//        else if (currentLevel instanceof Level2){
+//            System.out.println("Well done! Game complete.");
+//            System.exit(0);
+//        }
+    }
 
     /** Run the game. */
     public static void main(String[] args) {
-
         new Game();
     }
 }

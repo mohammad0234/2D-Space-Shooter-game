@@ -11,16 +11,6 @@ public class Star extends Walker {
     Random star;  // Random variable
     float xPos;
 
-    static int starCount;
-
-    public static int getStarCount() {
-        return starCount;
-    }
-
-    public static void setStarCount(int starCount) {
-        Star.starCount = starCount;
-    }
-
     private static final Shape starShape = new PolygonShape(0.028f,0.976f, 0.9f,0.636f, 0.924f,-0.544f, 0.184f,
             -0.988f, -0.664f,-0.82f, -0.984f,0.116f, -0.556f,1.048f);
 

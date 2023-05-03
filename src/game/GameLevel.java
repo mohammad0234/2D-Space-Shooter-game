@@ -10,14 +10,14 @@ import java.awt.*;
 
 public abstract class GameLevel extends World {
 
-    static SpaceShooter mainShooter;
-   // public boolean isComplete;
+    private SpaceShooter mainShooter;
+    // public boolean isComplete;
 
     private Game game;
 
-    public GameLevel(){
+    public GameLevel(Game game){
 
-        //this.game = game;
+        this.game = game;
 
         Color transparentBlack = new Color(0, 0, 0, 0);
 
@@ -48,10 +48,10 @@ public abstract class GameLevel extends World {
         Pickup pick = new Pickup(mainShooter,this);
         mainShooter.addCollisionListener(pick);  // calls on the pickup method to repsawn in again and so the collision works when it respawns
 
-//        mainShooter.addCollisionListener(new EnemyCollision(this));
+        mainShooter.addCollisionListener(new StarEncounter(this,game));
     }
 
-    public static SpaceShooter getShooter(){
+    public SpaceShooter getShooter(){
         return mainShooter;
     }
     public abstract boolean isComplete();

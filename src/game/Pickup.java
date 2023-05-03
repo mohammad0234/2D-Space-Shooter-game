@@ -11,9 +11,7 @@ import java.awt.event.ActionListener;
 
 public class Pickup implements CollisionListener, ActionListener {
 
-    GameLevel level;
 
-     static int starPicked;
 
     private SpaceShooter mainShooter;
     World world;
@@ -28,9 +26,9 @@ public class Pickup implements CollisionListener, ActionListener {
         if (e.getOtherBody() instanceof Star){
             e.getOtherBody().destroy();
             mainShooter.multiplyPoints();  // if star is picked up, points are multiplied
-            starPicked++;
+            mainShooter.setStarCount(mainShooter.getStarCount()+1);
 
-            Timer timer = new Timer(20000,this);
+            Timer timer = new Timer(5000,this);
             timer.setRepeats(true);
             timer.start();
             timer.isRunning();
@@ -41,4 +39,5 @@ public class Pickup implements CollisionListener, ActionListener {
     public void actionPerformed(ActionEvent e) {
         new Star(world);    //new star is spawned in after a set amount of time.
     }
+
 }

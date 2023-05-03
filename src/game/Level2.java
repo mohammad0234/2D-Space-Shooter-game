@@ -7,10 +7,10 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
-public class Level1 extends GameLevel{
+public class Level2 extends GameLevel{
     private static SoundClip gameMusic;
 
-    public Level1(Game game){
+    public Level2(Game game){
         super(game);
 
         Enemy enemy1 = new Enemy(this);
@@ -75,7 +75,7 @@ public class Level1 extends GameLevel{
         asteroid6.setValue();
 
         try {
-            gameMusic = new SoundClip("data/Sound/music/level1.wav");
+            gameMusic = new SoundClip("data/Sound/music/level2.mid");
             gameMusic.loop();
 
         }catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
