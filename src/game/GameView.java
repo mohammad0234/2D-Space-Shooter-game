@@ -1,7 +1,6 @@
 package game;
 
 import city.cs.engine.UserView;
-
 import javax.swing.*;
 import java.awt.*;
 

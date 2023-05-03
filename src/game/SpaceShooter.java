@@ -1,19 +1,23 @@
 package game;
 
-
 import city.cs.engine.*;
 import city.cs.engine.Shape;
 import org.jbox2d.common.Vec2;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.awt.*;
+import java.io.IOException;
 
-public class SpaceShooter extends Walker  {
+public class SpaceShooter extends Walker {
     private static final Shape spaceShape = new PolygonShape(1.36f,-0.79f, 1.36f,-0.6f, 0.32f,1.48f, -0.28f,1.48f,
             -1.36f,-0.56f, -1.36f,-0.79f);
 
     private static final BodyImage image = new BodyImage("data/Player/ship.png", 3);
     private int starCount;
     int totalScore, points ;
+
+    //private static SoundClip shootingSound;
 
     public SpaceShooter(World world){
         super(world,spaceShape);
@@ -22,7 +26,6 @@ public class SpaceShooter extends Walker  {
         this.addImage(image);
         points = 5;
         totalScore = 0;
-//        game=game;
     }
 
     public void shoot(){
@@ -37,8 +40,16 @@ public class SpaceShooter extends Walker  {
         projectile.setPosition(new Vec2(this.getPosition().x,this.getPosition().y+2));
         projectile.setLinearVelocity(new Vec2(0,40));
 
-
     }
+
+//    static {
+//        try {
+//            shootingSound = new SoundClip("data/booksound.wav");
+//            System.out.println("Loading books sound");
+//        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+//            System.out.println(e);
+//        }
+//    }
 
     public int getStarCount() {
         return starCount;
@@ -60,7 +71,4 @@ public class SpaceShooter extends Walker  {
         points=points*2;  // used in Pickup class
     }
 
-    public void setTotalScore(int totalScore) {
-        this.totalScore = totalScore;
-    }
 }

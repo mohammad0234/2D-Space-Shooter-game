@@ -43,7 +43,6 @@ public class Level2 extends GameLevel{
         enemy6.setGravityScale(0);
         enemy6.setValue();
 
-
         Asteroids asteroid1 = new Asteroids(this);
         asteroid1.setPosition(new Vec2(0,4.5f));
         asteroid1.setGravityScale(0);

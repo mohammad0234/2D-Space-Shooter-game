@@ -10,6 +10,7 @@ import javax.swing.Timer;
 public class EnemyCollision implements CollisionListener, ActionListener{
 
     private SpaceShooter mainShooter;
+
     private Body otherBody;
 
     public EnemyCollision(SpaceShooter shoot){

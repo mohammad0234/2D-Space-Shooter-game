@@ -1,6 +1,10 @@
 package game;
 
-import javax.swing.JFrame;
+import city.cs.engine.World;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Your main game entry point
@@ -54,6 +58,7 @@ public class Game {
 
       public void goToNextLevel(){
         if (currentLevel instanceof Level1){
+            currentLevel.stop();
             ((Level1) currentLevel).gameMusic.stop();
 
             SpaceShooter prevShooter = currentLevel.getShooter();
@@ -66,7 +71,8 @@ public class Game {
             controller.updateShooter(currentLevel.getShooter());
             currentLevel.start();
         }
-        if (currentLevel instanceof Level2){
+        else if (currentLevel instanceof Level2){
+            currentLevel.stop();
             ((Level2) currentLevel).gameMusic.stop();
 
             SpaceShooter prevShooter = currentLevel.getShooter();
@@ -79,6 +85,7 @@ public class Game {
             controller.updateShooter(currentLevel.getShooter());
             currentLevel.start();
         }
+
     }
 
     /** Run the game. */

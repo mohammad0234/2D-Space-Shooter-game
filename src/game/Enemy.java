@@ -1,7 +1,10 @@
 package game;
 
 import city.cs.engine.*;
+import city.cs.engine.Shape;
 import org.jbox2d.common.Vec2;
+
+import java.awt.*;
 
 public class Enemy extends Walker implements StepListener {
 
@@ -46,6 +49,20 @@ public class Enemy extends Walker implements StepListener {
 
     @Override
     public void postStep(StepEvent stepEvent) {
+
+    }
+
+    public void enemyShoot(){
+        DynamicBody projectile = new DynamicBody(this.getWorld(), new CircleShape(0.2f));
+        projectile.setFillColor(Color.red);
+        projectile.addImage(new BodyImage("data/Projectiles/bullet.png", 0.9f));
+
+//        SpaceShooter impact = new SpaceShooter(this);
+//        projectile.addCollisionListener(impact);
+        projectile.setGravityScale(0);
+
+        projectile.setPosition(new Vec2(this.getPosition().x-2,this.getPosition().y));
+        projectile.setLinearVelocity(new Vec2(40,0));
 
     }
 }

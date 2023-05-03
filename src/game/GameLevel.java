@@ -4,15 +4,20 @@ import city.cs.engine.BoxShape;
 import city.cs.engine.Shape;
 import city.cs.engine.StaticBody;
 import city.cs.engine.World;
+//import org.jbox2d.common.Timer;
 import org.jbox2d.common.Vec2;
+import javax.swing.*;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public abstract class GameLevel extends World {
 
     private SpaceShooter mainShooter;
 
     private Game game;
+
+    private Timer t;
 
     public GameLevel(Game game){
 
@@ -48,6 +53,12 @@ public abstract class GameLevel extends World {
         mainShooter.addCollisionListener(pick);  // calls on the pickup method to repsawn in again and so the collision works when it respawns
 
         mainShooter.addCollisionListener(new StarEncounter(this,game));
+
+        MyTimerCode timerResponse = new MyTimerCode(this);
+        t = new Timer(2000, timerResponse);
+        t.setInitialDelay(5000);
+        t.start();
+
     }
 
     public SpaceShooter getShooter(){
