@@ -11,10 +11,19 @@ public class GameView extends UserView  {
     private Image background;
     private SpaceShooter mainShooter;
 
-   // private static Image background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+    private GameLevel currentLevel;
+
+
     public GameView(GameLevel w, SpaceShooter shooter, int width, int height) {
         super(w, width, height);
-        background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+
+//        if (w instanceof Level1){
+//            background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+//        }
+//
+//        if (w instanceof Level2){
+//            background = new ImageIcon("data/bg2.jpg").getImage();
+//        }
 
         mainShooter = shooter;
     }
@@ -22,6 +31,13 @@ public class GameView extends UserView  {
     @Override
     protected void paintBackground(Graphics2D g) {
         super.paintBackground(g);
+        if (currentLevel instanceof Level1){
+            background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+        }
+
+        if (currentLevel instanceof Level2){
+            background = new ImageIcon("data/bg2.jpg").getImage();
+        }
         g.drawImage(background, 0, 0, this);
 
     }

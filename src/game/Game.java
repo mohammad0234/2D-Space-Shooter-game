@@ -61,7 +61,8 @@ public class Game {
 
       public void goToNextLevel(){
         if (currentLevel instanceof Level1){
-            currentLevel.stop();
+            ((Level1) currentLevel).gameMusic.stop();
+
             SpaceShooter prevShooter = currentLevel.getShooter();
 
             currentLevel = new Level2(this);

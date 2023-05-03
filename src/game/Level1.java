@@ -1,16 +1,20 @@
 package game;
 
 import city.cs.engine.SoundClip;
+import city.cs.engine.UserView;
 import org.jbox2d.common.Vec2;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 
-public class Level1 extends GameLevel{
-    private static SoundClip gameMusic;
+public class Level1 extends GameLevel {
+    public SoundClip gameMusic;
 
     public Level1(Game game){
+
         super(game);
 
         Enemy enemy1 = new Enemy(this);
@@ -85,6 +89,6 @@ public class Level1 extends GameLevel{
 
     @Override
     public boolean isComplete() {
-        return getShooter().getStarCount()>2;
+        return getShooter().getStarCount()>1;
     }
 }
