@@ -20,7 +20,8 @@ public class EnemyCollision implements CollisionListener, ActionListener{
     @Override
     public void collide(CollisionEvent collisionEvent) {
 
-        if (collisionEvent.getOtherBody() instanceof Enemy || collisionEvent.getOtherBody() instanceof Asteroids)  {
+        if (collisionEvent.getOtherBody() instanceof Enemy || collisionEvent.getOtherBody() instanceof Asteroids
+                || collisionEvent.getOtherBody() instanceof SpaceShooter)  {
             collisionEvent.getReportingBody().destroy();
             otherBody = collisionEvent.getOtherBody();
             mainShooter.addPoints();
@@ -30,10 +31,6 @@ public class EnemyCollision implements CollisionListener, ActionListener{
             Timer timer = new Timer(500, this );
             timer.setRepeats(false);
             timer.start();
-
-//            if (level.isComplete){
-//                g.goToNextLevel();
-//            }
 
         }
 

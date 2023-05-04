@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 public class Game {
     GameLevel currentLevel;
 
+//    private Timer timer;
+
     GameView view;
     PlayerController controller;
 
@@ -31,6 +33,10 @@ public class Game {
         view.addKeyListener(controller);
 
         view.addMouseListener(new GiveFocus(view));
+
+//        timer = new Timer(2000, this);
+//        timer.setInitialDelay(5000);
+//        timer.start();
 
         //4. create a Java window (frame) and add the game
         //   view to it
@@ -92,4 +98,14 @@ public class Game {
     public static void main(String[] args) {
         new Game();
     }
+
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        Enemy er = new Enemy(this);
+//    }
+
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        Enemy er = new Enemy(this);
+//    }
 }

@@ -7,7 +7,7 @@ public class Asteroids extends Walker implements StepListener {
 
     private float left,right;
 
-    private float deltaY = -0.005f; //how slow it moves down
+    private float deltaY = -0.5f; //how slow it moves down
 
     Vec2 startPosition;
 
@@ -20,12 +20,11 @@ public class Asteroids extends Walker implements StepListener {
         super(world,asteroidShape);
         addImage(image);
         world.addStepListener(this);
-        startWalking(5);
+        startWalking(1);
     }
 
     public void setValue(){
         startPosition = this.getPosition();
-        //super.setPosition((position));
         left = startPosition.x-12;
         right = startPosition.x+12;
     }
@@ -33,11 +32,11 @@ public class Asteroids extends Walker implements StepListener {
     @Override
     public void preStep(StepEvent stepEvent) {  // moves asteroids right to left
         if (getPosition().x>right){
-            startWalking(-7);
+            startWalking(-2);
         }
 
         if (getPosition().x<left){
-            startWalking(7);
+            startWalking(2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              );
         }
 
        this.setPosition(new Vec2(this.getPosition().x, this.getPosition().y+ deltaY));  // moves asteroids down
