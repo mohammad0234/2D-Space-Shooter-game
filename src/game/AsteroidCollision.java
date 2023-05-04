@@ -1,15 +1,26 @@
 package game;
 
-import city.cs.engine.Body;
-import city.cs.engine.BodyImage;
-import city.cs.engine.CollisionEvent;
-import city.cs.engine.CollisionListener;
+import city.cs.engine.*;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class AsteroidCollision implements CollisionListener, ActionListener {
+
+    private static SoundClip explosionSound;
+
+    static {
+        try {
+            explosionSound = new SoundClip("data/Sound/ExplodeSound.wav");
+            System.out.println("Loading books sound");
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            System.out.println(e);
+        }
+    }
 
     private Body otherBody;
     @Override
@@ -20,6 +31,7 @@ public class AsteroidCollision implements CollisionListener, ActionListener {
 
             final BodyImage explosionGif = new BodyImage("data/ezgif.gif", 3);
             collisionEvent.getOtherBody().addImage(explosionGif);  //adds animation when body is destroyed
+            explosionSound.play();
 
             Timer timer = new Timer(500, this );
             timer.setRepeats(true);
