@@ -27,16 +27,13 @@ public class Asteroids extends Walker implements StepListener {
         startWalking(1);
         AsteroidCollision ac = new AsteroidCollision();
         addCollisionListener(ac);
-
-//        xPos= ThreadLocalRandom.current().nextInt(-15, 15);
-//        setPosition(new Vec2(xPos, 10));  //randomised drop of asteroids on the x coordinate
     }
 
-//    public void setValue(){
-//        startPosition = this.getPosition();
-//        left = startPosition.x-12;
-//        right = startPosition.x+12;
-//    }
+    public void setValue(){
+        startPosition = this.getPosition();
+        left = startPosition.x-12;
+        right = startPosition.x+12;
+    }
 
     @Override
     public void preStep(StepEvent stepEvent) {  // moves asteroids right to left

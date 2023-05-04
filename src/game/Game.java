@@ -1,18 +1,12 @@
 package game;
 
-import city.cs.engine.World;
-
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Your main game entry point
  */
 public class Game {
     GameLevel currentLevel;
-
-//    private Timer timer;
 
     GameView view;
     PlayerController controller;
@@ -21,7 +15,6 @@ public class Game {
     public Game() {
 
         //1. make an empty game world
-       // World world = new World();
 
         currentLevel = new Level1(this);
 
@@ -33,10 +26,6 @@ public class Game {
         view.addKeyListener(controller);
 
         view.addMouseListener(new GiveFocus(view));
-
-//        timer = new Timer(2000, this);
-//        timer.setInitialDelay(5000);
-//        timer.start();
 
         //4. create a Java window (frame) and add the game
         //   view to it
@@ -99,13 +88,4 @@ public class Game {
         new Game();
     }
 
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        Enemy er = new Enemy(this);
-//    }
-
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        Enemy er = new Enemy(this);
-//    }
 }

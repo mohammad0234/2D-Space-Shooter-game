@@ -13,8 +13,6 @@ public class PlayerController implements KeyListener {
     SpaceShooter mainShooter;
     Enemy shooting;
 
-    //private static SoundClip shootingSound;
-
     public PlayerController (SpaceShooter mainShooter){
         this.mainShooter = mainShooter;
     }

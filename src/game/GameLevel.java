@@ -53,7 +53,7 @@ public abstract class GameLevel extends World {
         mainShooter.addCollisionListener(new StarEncounter(this,game));
 
         MyTimerCode timerResponse = new MyTimerCode(this);  //Enemy respawn timer
-        timer = new Timer(3000, timerResponse);
+        timer = new Timer(4000, timerResponse);
         timer.setInitialDelay(5000);
         timer.start();
 
