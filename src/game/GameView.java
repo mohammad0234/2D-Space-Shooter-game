@@ -11,9 +11,21 @@ public class GameView extends UserView  {
     private GameLevel currentLevel;
 
 
+//
+//    private final Image fullHealth;
+//
+//    private final Image halfHealth;
+//    private final Image nohealthHealth;
+
+
+
+
     public GameView(GameLevel w, SpaceShooter shooter, int width, int height) {
         super(w, width, height);
         background = new ImageIcon("data/Background/bg1.png").getImage();
+//        this.fullHealth;
+//        this.halfHealth;
+//        this.nohealthHealth;
 
         mainShooter = shooter;
     }
@@ -29,6 +41,7 @@ public class GameView extends UserView  {
         g.setColor(Color.white);
         g.drawString("Total score: " + mainShooter.getTotalScore(), 10, 30);  // calls on my total score and sets position
         g.drawString("Star picked: " + mainShooter.getStarCount(), 10,50);
+
     }
 
     public void setWorld(GameLevel gl){

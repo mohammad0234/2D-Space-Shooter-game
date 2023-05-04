@@ -10,6 +10,15 @@ import java.io.IOException;
 
 public class PlayerController implements KeyListener {
 
+    private static SoundClip laserSound;
+
+    static {
+        try {
+            laserSound = new SoundClip("data/Sound/Shooting.wav");
+        } catch (UnsupportedAudioFileException|IOException|LineUnavailableException e) {
+        }
+    }
+
     SpaceShooter mainShooter;
     Enemy shooting;
 
@@ -37,6 +46,7 @@ public class PlayerController implements KeyListener {
 
         else if (code == KeyEvent.VK_SPACE) {
             mainShooter.shoot();
+            laserSound.play();
         }
 
         else if (code == KeyEvent.VK_P) {

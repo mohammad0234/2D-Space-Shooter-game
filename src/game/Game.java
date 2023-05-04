@@ -56,10 +56,10 @@ public class Game {
             currentLevel.stop();
             ((Level1) currentLevel).gameMusic.stop();
 
-            SpaceShooter prevShooter = currentLevel.getShooter();
+            //SpaceShooter prevShooter = currentLevel.getShooter();
 
             currentLevel = new Level2(this);
-            SpaceShooter newShooter = currentLevel.getShooter();
+           // SpaceShooter newShooter = currentLevel.getShooter();
 
             //level now refer to the new level
             view.setWorld(currentLevel);
