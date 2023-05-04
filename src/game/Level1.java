@@ -44,10 +44,10 @@ public class Level1 extends GameLevel {
 //        enemy6.setValue();
 //
 //
-        Asteroids asteroid1 = new Asteroids(this);
-        asteroid1.setPosition(new Vec2(0,4.5f));
-        asteroid1.setGravityScale(0);
-        asteroid1.setValue();
+//        Asteroids asteroid1 = new Asteroids(this);
+//        asteroid1.setPosition(new Vec2(0,4.5f));
+//        asteroid1.setGravityScale(0);
+//        asteroid1.setValue();
 //
 //        Asteroids asteroid2 = new Asteroids(this);
 //        asteroid2.setPosition(new Vec2(-6f,4.5f));
