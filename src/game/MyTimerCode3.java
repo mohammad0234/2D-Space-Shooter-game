@@ -14,6 +14,8 @@ public class MyTimerCode3 extends World implements ActionListener {
 
     Random random;
 
+    FinalLevelAsteroids as1,as2,as3;
+
     public MyTimerCode3(GameLevel gl){
         this.gl = gl;
     }
@@ -39,21 +41,21 @@ public class MyTimerCode3 extends World implements ActionListener {
         er3.setGravityScale(0);
         er3.setValue();
 
-        Asteroids as1 = new Asteroids(gl);
+        as1 = new FinalLevelAsteroids(gl);
         random = new Random();
         x = random.nextInt(20)-10;
         as1.setPosition(new Vec2(x, 15f) );
         as1.setGravityScale(0);
         as1.setValue();
 
-        Asteroids as2 = new Asteroids(gl);
+        as2 = new FinalLevelAsteroids(gl);
         random = new Random();
         x = random.nextInt(20)-10;
         as2.setPosition(new Vec2(x, 15f) );
         as2.setGravityScale(0);
         as2.setValue();
 
-        Asteroids as3 = new Asteroids(gl);
+        as3 = new FinalLevelAsteroids(gl);
         random = new Random();
         x = random.nextInt(20)-10;
         as3.setPosition(new Vec2(x, 15f) );

@@ -81,8 +81,8 @@ public class Game {
             currentLevel.start();
         }
         else if (currentLevel instanceof Level3){
-            currentLevel.stop();
-            System.out.println("Game Completed!");
+            System.out.println("Well done! Game complete.");
+            System.exit(0);
         }
     }
 

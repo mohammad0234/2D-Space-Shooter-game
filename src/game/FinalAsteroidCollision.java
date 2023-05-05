@@ -9,23 +9,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class AsteroidCollision implements CollisionListener, ActionListener {
-
+public class FinalAsteroidCollision implements CollisionListener, ActionListener {
     private static SoundClip explosionSound;
 
     static {
         try {
             explosionSound = new SoundClip("data/Sound/ExplodeSound.wav");
-            System.out.println("Loading books sound");
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            System.out.println(e); //sounds for explosion sound once collided
+            System.out.println(e);
         }
     }
     private Body otherBody;
     @Override
     public void collide(CollisionEvent collisionEvent) {
         if (collisionEvent.getOtherBody() instanceof SpaceShooter || collisionEvent.getOtherBody() instanceof Enemy
-                || collisionEvent.getOtherBody() instanceof EnemyLvl2 //When asteroid collides with all these bodies then it destroys them
+                || collisionEvent.getOtherBody() instanceof EnemyLvl2
                 || collisionEvent.getOtherBody() instanceof EnemyLvl3){
             collisionEvent.getReportingBody().destroy();
             otherBody = collisionEvent.getOtherBody();
@@ -34,7 +32,7 @@ public class AsteroidCollision implements CollisionListener, ActionListener {
             collisionEvent.getOtherBody().addImage(explosionGif);  //adds animation when body is destroyed
             explosionSound.play();
 
-            Timer timer = new Timer(500, this ); //Timer for how long the explosion lasts.
+            Timer timer = new Timer(500, this );
             timer.setRepeats(true);
             timer.start();
         }

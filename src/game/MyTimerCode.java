@@ -26,7 +26,6 @@ public class MyTimerCode extends World implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         counter++;
         System.out.println(counter);
-        //tCounter++;
 
         Enemy er1 = new Enemy(gl);
         er1.setPosition(new Vec2(-9f, 7.5f));

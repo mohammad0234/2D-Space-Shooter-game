@@ -8,7 +8,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Star extends Walker {
 
-    //Random star;  // Random variable
     float xPos;
 
     private static final Shape starShape = new PolygonShape(0.028f,0.976f, 0.9f,0.636f, 0.924f,-0.544f, 0.184f,

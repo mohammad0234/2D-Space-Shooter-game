@@ -42,15 +42,6 @@ public class SpaceShooter extends Walker {
 
     }
 
-//    static {
-//        try {
-//            shootingSound = new SoundClip("data/booksound.wav");
-//            System.out.println("Loading books sound");
-//        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-//            System.out.println(e);
-//        }
-//    }
-
     public int getStarCount() {
         return starCount;
     }

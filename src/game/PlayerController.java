@@ -46,7 +46,7 @@ public class PlayerController implements KeyListener {
 
         else if (code == KeyEvent.VK_SPACE) {
             mainShooter.shoot();
-            laserSound.play();
+            laserSound.play(); //plays sound of laser when space is pressed
         }
     }
 
@@ -64,6 +64,6 @@ public class PlayerController implements KeyListener {
     }
 
     public void updateShooter (SpaceShooter newShooter){
-        mainShooter = newShooter;
+        mainShooter = newShooter;  // allows controller to work on all levels(called in Game class)
     }
 }
