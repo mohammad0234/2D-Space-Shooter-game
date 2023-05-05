@@ -15,7 +15,7 @@ public class StarEncounter implements CollisionListener {
     public void collide(CollisionEvent e) {
         //conditions for completing the level are fulfilled
         //goToNextLevel
-        if (level.isComplete()){ 
+        if (level.isComplete()){
             g.goToNextLevel();
         }
     }

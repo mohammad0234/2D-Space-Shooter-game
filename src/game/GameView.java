@@ -41,7 +41,7 @@ public class GameView extends UserView  {
         }
         else if
         (currentLevel instanceof Level2){
-            background = new ImageIcon("data/Background/bg2.jpg").getImage();
+            background = new ImageIcon("data/Background/bg2.jpg").getImage();  //background for different levels
         }
         else if(currentLevel instanceof Level3){
             background = new ImageIcon("data/Background/bg3.png").getImage();

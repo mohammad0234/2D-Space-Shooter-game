@@ -1,6 +1,7 @@
 package game;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Your main game entry point
@@ -10,6 +11,8 @@ public class Game {
 
     GameView view;
     PlayerController controller;
+
+    private JFrame frame;
 
     /** Initialise a new Game. */
     public Game() {
@@ -29,7 +32,7 @@ public class Game {
 
         //4. create a Java window (frame) and add the game
         //   view to it
-        final JFrame frame = new JFrame("Space Shooter Game");
+        frame = new JFrame("Space Shooter Game");
         frame.add(view);
 
         // enable the frame to quit the application
@@ -81,9 +84,19 @@ public class Game {
             currentLevel.start();
         }
         else if (currentLevel instanceof Level3){
+            ((Level3) currentLevel).gameMusic.stop();
+            currentLevel.stop();
             System.out.println("Well done! Game complete.");
-            System.exit(0);
+            gameEnded();
         }
+    }
+
+    public void gameEnded(){
+        frame.remove(view);
+        GameMenu menu = new GameMenu();
+        menu.getMainPanel().setPreferredSize(new Dimension(800,600));
+        frame.add(menu.getMainPanel());
+        frame.pack();
     }
 
     /** Run the game. */
