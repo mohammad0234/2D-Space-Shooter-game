@@ -85,6 +85,6 @@ public class Level3 extends GameLevel{
 
     @Override
     public boolean isComplete() {
-        return getShooter().getStarCount()>2;
+        return getShooter().getStarCount()>7;
     }
 }

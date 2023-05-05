@@ -1,12 +1,9 @@
 package game;
 
 import city.cs.engine.*;
-import city.cs.engine.Shape;
 import org.jbox2d.common.Vec2;
 
-import java.awt.*;
-
-public class Enemy extends Walker implements StepListener {
+public class EnemyLvl2 extends Walker implements StepListener {
 
     private float left,right;
 
@@ -14,14 +11,13 @@ public class Enemy extends Walker implements StepListener {
 
     Vec2 startPosition;
 
-   private static final Shape enemyShape = new PolygonShape(0.01f,1.39f, -1.45f,0.55f, -1.4f,-0.56f, -0.37f,
-           -1.5f, 0.71f,-1.48f, 1.48f,0.1f, 0.05f,1.39f);
+    private static final Shape enemy2Shape = new PolygonShape(0.01f,1.39f, -1.45f,0.55f, -1.4f,-0.56f, -0.37f,
+            -1.5f, 0.71f,-1.48f, 1.48f,0.1f, 0.05f,1.39f);
 
-    private static final BodyImage image = new BodyImage("data/Enemies/enemyNimble.png", 3);
+    private static final BodyImage image = new BodyImage("data/Enemies/enemyHeavy.png", 3);
 
-
-    public Enemy(World world) {
-        super(world,enemyShape);
+    public EnemyLvl2(World world) {
+        super(world,enemy2Shape);
         addImage(image);
         world.addStepListener(this);
         startWalking(5);
@@ -29,9 +25,10 @@ public class Enemy extends Walker implements StepListener {
 
     public void setValue(){
         startPosition = this.getPosition();
-        left = startPosition.x-12f;
-        right = startPosition.x+12f;
+        left = startPosition.x-8f;
+        right = startPosition.x+8f;
     }
+
 
     @Override
     public void preStep(StepEvent stepEvent) {
@@ -51,6 +48,4 @@ public class Enemy extends Walker implements StepListener {
     public void postStep(StepEvent stepEvent) {
 
     }
-
 }
-

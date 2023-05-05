@@ -1,15 +1,13 @@
 package game;
 
-
 import city.cs.engine.World;
 import org.jbox2d.common.Vec2;
-
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class MyTimerCode extends World implements ActionListener {
+public class MyTimerCode2 extends World implements ActionListener {
 
     private GameLevel gl;
 
@@ -17,7 +15,7 @@ public class MyTimerCode extends World implements ActionListener {
 
     Random random;
 
-    public MyTimerCode(GameLevel gl){
+    public MyTimerCode2(GameLevel gl){
         this.gl = gl;
     }
 
@@ -28,7 +26,7 @@ public class MyTimerCode extends World implements ActionListener {
         System.out.println(counter);
         //tCounter++;
 
-        Enemy er1 = new Enemy(gl);
+        EnemyLvl2 er1 = new EnemyLvl2(gl);
         er1.setPosition(new Vec2(-9f, 7.5f));
         er1.setGravityScale(0);
         er1.setValue();
@@ -38,7 +36,7 @@ public class MyTimerCode extends World implements ActionListener {
         er2.setGravityScale(0);
         er2.setValue();
 
-        Enemy er3 = new Enemy(gl);
+        EnemyLvl2 er3 = new EnemyLvl2(gl);
         er3.setPosition(new Vec2(3, 7.5f));
         er3.setGravityScale(0);
         er3.setValue();
@@ -60,4 +58,3 @@ public class MyTimerCode extends World implements ActionListener {
     }
 
 }
-

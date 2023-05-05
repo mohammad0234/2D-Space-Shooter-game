@@ -48,12 +48,8 @@ public class PlayerController implements KeyListener {
             mainShooter.shoot();
             laserSound.play();
         }
-
-        else if (code == KeyEvent.VK_P) {
-            shooting.enemyShoot();
-        }
-
     }
+
 
     @Override
     public void keyReleased(KeyEvent e) {
