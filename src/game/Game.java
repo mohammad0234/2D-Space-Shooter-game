@@ -80,7 +80,10 @@ public class Game {
             controller.updateShooter(currentLevel.getShooter());
             currentLevel.start();
         }
-
+        else if (currentLevel instanceof Level3){
+            currentLevel.stop();
+            System.out.println("Game Completed!");
+        }
     }
 
     /** Run the game. */

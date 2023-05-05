@@ -35,6 +35,7 @@ public class EnemyCollision implements CollisionListener, ActionListener{
     public void collide(CollisionEvent collisionEvent) {
 
         if (collisionEvent.getOtherBody() instanceof Enemy ||  collisionEvent.getOtherBody() instanceof EnemyLvl2
+                ||  collisionEvent.getOtherBody() instanceof EnemyLvl3
                 || collisionEvent.getOtherBody() instanceof Asteroids
                 || collisionEvent.getOtherBody() instanceof SpaceShooter)  {
             collisionEvent.getReportingBody().destroy();
