@@ -12,6 +12,8 @@ public class Game {
     GameView view;
     PlayerController controller;
 
+    private GameMenu menu;
+
     private JFrame frame;
 
     /** Initialise a new Game. */
@@ -59,10 +61,10 @@ public class Game {
             currentLevel.stop();
             ((Level1) currentLevel).gameMusic.stop();
 
-            //SpaceShooter prevShooter = currentLevel.getShooter();
+            SpaceShooter prevShooter = currentLevel.getShooter();
 
             currentLevel = new Level2(this);
-           // SpaceShooter newShooter = currentLevel.getShooter();
+            SpaceShooter newShooter = currentLevel.getShooter();
 
             //level now refer to the new level
             view.setWorld(currentLevel);
@@ -93,9 +95,19 @@ public class Game {
 
     public void gameEnded(){
         frame.remove(view);
-        GameMenu menu = new GameMenu();
+        menu = new GameMenu(this);
         menu.getMainPanel().setPreferredSize(new Dimension(800,600));
         frame.add(menu.getMainPanel());
+        frame.pack();
+    }
+
+    public void restartGame(){
+        currentLevel = new Level1(this);
+        view.setWorld(currentLevel);
+        currentLevel.start();
+        controller.updateShooter(currentLevel.getShooter());
+        frame.remove(menu.getMainPanel());
+        frame.add(view);
         frame.pack();
     }
 
