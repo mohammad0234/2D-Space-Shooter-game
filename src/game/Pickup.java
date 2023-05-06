@@ -24,9 +24,9 @@ public class Pickup implements CollisionListener, ActionListener {
         if (e.getOtherBody() instanceof Star){
             e.getOtherBody().destroy();
             mainShooter.multiplyPoints();  // if star is picked up, points are multiplied
-            mainShooter.setStarCount(mainShooter.getStarCount()+1);
+            mainShooter.setStarCount(mainShooter.getStarCount()+1);//plus one when star is picked up
 
-            Timer timer = new Timer(1000,this);
+            Timer timer = new Timer(8000,this);
             timer.setRepeats(true);
             timer.start();
             timer.isRunning();

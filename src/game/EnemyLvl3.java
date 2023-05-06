@@ -6,7 +6,7 @@ import org.jbox2d.common.Vec2;
 public class EnemyLvl3 extends Walker implements StepListener {
     private float left,right;
 
-    private float deltaY = -0.005f;  // how slow it moves down
+    private float deltaY = -0.01f;  // how slow it moves down
 
     Vec2 startPosition;
 
@@ -19,7 +19,7 @@ public class EnemyLvl3 extends Walker implements StepListener {
         super(world,enemy3Shape);
         addImage(image);
         world.addStepListener(this);
-        startWalking(5);
+        startWalking(8);
     }
 
     public void setValue(){
@@ -32,11 +32,11 @@ public class EnemyLvl3 extends Walker implements StepListener {
     @Override
     public void preStep(StepEvent stepEvent) {
         if (getPosition().x>right){
-            startWalking(-7);
+            startWalking(-10);
         }
 
         if (getPosition().x<left){
-            startWalking(7);
+            startWalking(10);
         }
 
         this.setPosition(new Vec2(this.getPosition().x, this.getPosition().y+ deltaY));  //enemies move down towards player

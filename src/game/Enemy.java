@@ -29,8 +29,8 @@ public class Enemy extends Walker implements StepListener {
 
     public void setValue(){
         startPosition = this.getPosition();
-        left = startPosition.x-12f;
-        right = startPosition.x+12f;
+        left = startPosition.x-10f;   // how far they should move side to side
+        right = startPosition.x+10f;
     }
 
     @Override

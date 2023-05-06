@@ -7,7 +7,7 @@ public class EnemyLvl2 extends Walker implements StepListener {
 
     private float left,right;
 
-    private float deltaY = -0.005f;  // how slow it moves down
+    private float deltaY = -0.007f;  // how slow it moves down
 
     Vec2 startPosition;
 
@@ -33,11 +33,11 @@ public class EnemyLvl2 extends Walker implements StepListener {
     @Override
     public void preStep(StepEvent stepEvent) {
         if (getPosition().x>right){
-            startWalking(-7);
+            startWalking(-8);
         }
 
         if (getPosition().x<left){
-            startWalking(7);
+            startWalking(8);
         }
 
         this.setPosition(new Vec2(this.getPosition().x, this.getPosition().y+ deltaY));  //enemies move down towards player

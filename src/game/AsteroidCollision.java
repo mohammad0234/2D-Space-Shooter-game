@@ -22,6 +22,7 @@ public class AsteroidCollision implements CollisionListener, ActionListener {
         }
     }
     private Body otherBody;
+    private Shape shape;
     @Override
     public void collide(CollisionEvent collisionEvent) {
         if (collisionEvent.getOtherBody() instanceof SpaceShooter || collisionEvent.getOtherBody() instanceof Enemy

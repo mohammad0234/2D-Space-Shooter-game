@@ -9,7 +9,7 @@ public class Asteroids extends Walker implements StepListener {
 
     private float left,right;
 
-    private float deltaY = -0.1f; //how slow it moves down
+    private float deltaY = -0.05f; //how slow it moves down
 
     Vec2 startPosition;
 
@@ -31,7 +31,7 @@ public class Asteroids extends Walker implements StepListener {
 
     public void setValue(){
         startPosition = this.getPosition();
-        left = startPosition.x-12;
+        left = startPosition.x-12;   // how far it should move/spawn out in the screen
         right = startPosition.x+12;
     }
 

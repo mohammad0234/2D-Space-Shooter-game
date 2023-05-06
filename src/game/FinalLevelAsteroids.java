@@ -7,7 +7,7 @@ public class FinalLevelAsteroids  extends Walker implements StepListener {
 
     private float left,right;
 
-    private float deltaY = -0.05f; //how slow it moves down
+    private float deltaY = -0.08f; //how slow it moves down
 
     Vec2 startPosition;
 

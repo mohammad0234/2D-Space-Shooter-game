@@ -37,7 +37,7 @@ public class GameView extends UserView  {
         this.mainShooter = currentLevel.getShooter();
 
         if (currentLevel instanceof Level1){
-            background = new ImageIcon("data/backgroundSpace_01.1.png").getImage();
+            background = new ImageIcon("data/Background/bg1.png").getImage();
         }
         else if
         (currentLevel instanceof Level2){

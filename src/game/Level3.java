@@ -56,7 +56,6 @@ public class Level3 extends GameLevel{
             gameMusic.loop();
 
         }catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
-            System.out.println(e);
         }
     }
 

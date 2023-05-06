@@ -20,7 +20,6 @@ public class PlayerController implements KeyListener {
     }
 
     SpaceShooter mainShooter;
-    Enemy shooting;
 
     public PlayerController (SpaceShooter mainShooter){
         this.mainShooter = mainShooter;

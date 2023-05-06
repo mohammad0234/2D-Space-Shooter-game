@@ -8,7 +8,7 @@ public class GameMenuBackground extends JPanel {
     private Image endBackground;
 
     public GameMenuBackground(){
-        endBackground = new ImageIcon("data/Background/EndBack.png").getImage();
+        endBackground = new ImageIcon("data/Background/startBack.jpg").getImage();
     }
 
     @Override

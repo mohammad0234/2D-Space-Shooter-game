@@ -14,17 +14,14 @@ public class MyTimerCode3 extends World implements ActionListener {
 
     Random random;
 
-    FinalLevelAsteroids as1,as2,as3;
+    FinalLevelAsteroids as1,as2,as3,as4;
 
     public MyTimerCode3(GameLevel gl){
         this.gl = gl;
     }
 
-    int counter = 0;
     @Override
     public void actionPerformed(ActionEvent e) {
-        counter++;
-        System.out.println(counter);
 
         EnemyLvl3 er1 = new EnemyLvl3(gl);
         er1.setPosition(new Vec2(-9f, 7.5f));
@@ -61,6 +58,13 @@ public class MyTimerCode3 extends World implements ActionListener {
         as3.setPosition(new Vec2(x, 15f) );
         as3.setGravityScale(0);
         as3.setValue();
+
+        as4 = new FinalLevelAsteroids(gl);
+        random = new Random();
+        x = random.nextInt(20)-10;
+        as4.setPosition(new Vec2(x, 15f) );
+        as4.setGravityScale(0);
+        as4.setValue();
 
     }
 

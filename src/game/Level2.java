@@ -41,27 +41,21 @@ public class Level2 extends GameLevel{
         enemy5.setGravityScale(0);
         enemy5.setValue();
 
-        EnemyLvl2 enemy6 = new EnemyLvl2(this);
-        enemy6.setPosition(new Vec2(3f, 10.5f));
-        enemy6.setGravityScale(0);
-        enemy6.setValue();
-
         MyTimerCode2 timerResponse = new MyTimerCode2(this);  //Enemy respawn timer
-        timer = new Timer(5200, timerResponse);
+        timer = new Timer(4000, timerResponse);
         timer.setInitialDelay(6000);
         timer.start();
 
         try {
-            gameMusic = new SoundClip("data/Sound/music/level2.mid");
+            gameMusic = new SoundClip("data/Sound/music/level2.mid"); //Background music for level 2
             gameMusic.loop();
 
         }catch (UnsupportedAudioFileException | IOException | LineUnavailableException e){
-            System.out.println(e);
         }
     }
 
     @Override
     public boolean isComplete() {
-        return getShooter().getStarCount()>4;
+        return getShooter().getStarCount()>3;
     }
 }

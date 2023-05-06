@@ -4,10 +4,7 @@ import city.cs.engine.*;
 import city.cs.engine.Shape;
 import org.jbox2d.common.Vec2;
 
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import java.awt.*;
-import java.io.IOException;
 
 public class SpaceShooter extends Walker {
     private static final Shape spaceShape = new PolygonShape(1.36f,-0.79f, 1.36f,-0.6f, 0.32f,1.48f, -0.28f,1.48f,
@@ -17,7 +14,6 @@ public class SpaceShooter extends Walker {
     private int starCount;
     int totalScore, points ;
 
-    //private static SoundClip shootingSound;
 
     public SpaceShooter(World world){
         super(world,spaceShape);

@@ -93,6 +93,9 @@ public class Game {
         }
     }
 
+    /**
+     * method created to create the menu at the end of the game and called in GameMenu class
+     */
     public void gameEnded(){
         frame.remove(view);
         menu = new GameMenu(this);
@@ -101,14 +104,19 @@ public class Game {
         frame.pack();
     }
 
+    /**
+     * Method to restart the game and called in Game menu class
+     */
+
     public void restartGame(){
         currentLevel = new Level1(this);
-        view.setWorld(currentLevel);
         currentLevel.start();
+        view.setWorld(currentLevel);
         controller.updateShooter(currentLevel.getShooter());
         frame.remove(menu.getMainPanel());
         frame.add(view);
         frame.pack();
+
     }
 
     /** Run the game. */

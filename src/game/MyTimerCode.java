@@ -21,11 +21,11 @@ public class MyTimerCode extends World implements ActionListener {
         this.gl = gl;
     }
 
-    int counter = 0;
+    Asteroids as1,as2;
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        counter++;
-        System.out.println(counter);
+        //counter++;
 
         Enemy er1 = new Enemy(gl);
         er1.setPosition(new Vec2(-9f, 7.5f));
@@ -42,14 +42,14 @@ public class MyTimerCode extends World implements ActionListener {
         er3.setGravityScale(0);
         er3.setValue();
 
-        Asteroids as1 = new Asteroids(gl);
+        as1 = new Asteroids(gl);
         random = new Random();
         x = random.nextInt(20)-10;
         as1.setPosition(new Vec2(x, 15f) );
         as1.setGravityScale(0);
         as1.setValue();
 
-        Asteroids as2 = new Asteroids(gl);
+        as2 = new Asteroids(gl);
         random = new Random();
         x = random.nextInt(20)-10;
         as2.setPosition(new Vec2(x, 15f) );
